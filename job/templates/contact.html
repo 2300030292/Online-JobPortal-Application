@@ -1,0 +1,51 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    .mydiv:hover {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+        transform: translateY(-20px);
+        padding-top: 10px;
+    }
+</style>
+
+<marquee
+    style="font-family: 'Monotype Corsiva'; font-size: 25px; color: darkcyan; background-color: black; font-weight: bold; margin-top: 1%">
+    Contact Us
+</marquee>
+<hr>
+
+<div class="container mt-5">
+    <br><br>
+    <div class="row mt-5">
+        <div class="col-sm-3 mydiv">
+            <h4 class="text-center"><i class="fas fa-square-phone"></i> Contact</h4>
+            <p class="text-center">+91 911 330 1648<br>+91 748 885 7897</p>
+        </div>
+
+        <div class="col-sm-3 mydiv">
+            <h4 class="text-center"><i class="fa-solid fa-envelope"></i> Email ID</h4>
+            <p class="text-center">vibhutitiwary748@gmaill.com</p>
+        </div>
+
+        <div class="col-sm-3 mydiv">
+            <h4 class="text-center"><i class="fa-solid fa-location-dot"></i> Address</h4>
+            <p class="text-center"> Kankarbagh House Main Road Lohia Nagar Sampatchak, Patna Bihar 800020</p>
+        </div>
+
+        <div class="col-sm-3 mydiv">
+            <h4 class="text-center"><i class="fa-solid fa-clock"></i> Office Timing</h4>
+            <p class="text-center">10:00 A.M. to 7:00 P.M.<br>(Sunday Closed)</p>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}
