@@ -1,10 +1,9 @@
-{% load static %}
-
 <script>
     function sendEmail() {
-      window.location.href = "mailto:vibhutitiwary748@.gmailcom";
+        // Fixed typo in the domain format
+        window.location.href = "mailto:vibhutitiwary748@gmail.com";
     }
-  </script>
+</script>
 
 <div style="background-color: black; width: 100%; height: 500px; padding-top: 80px; margin-top: 200px;">
     <div class="container">
@@ -19,23 +18,22 @@
 
             <div class="col-md-4 mt-3">
                 <h3 class="text-white">About Us</h3>
-                <p style="color: yellow; font-size: 18px">We at JobsJust4U aim to connect our users to the top recruiting industrial companies by providing the right information at the right time. All the informations shred by us are done through verified and trusted resources.</p>
+                <p style="color: yellow; font-size: 18px">We at JobsJust4U aim to connect our users to the top recruiting industrial companies by providing the right information at the right time. All the information shared by us is done through verified and trusted resources.</p>
             </div>
 
             <div class="col-md-4 mt-3">
                 <h3 class="text-white">Newsletter</h3>
                 <p style="color: yellow; font-size: 18px">If any additional information is required, send us your email ID.</p>
-                <form method="post" class="form-inline">
-                    {% csrf_token %}
-                        <input type="email" name="emailid" placeholder="Email ID" required class="form-control mr-2">
-                    <input type="submit" value="Send" onclick="sendEmail()" class="btn btn-primary">
-                </form>
+                <div class="form-inline">
+                    <input type="email" id="newsletterEmail" placeholder="Email ID" required class="form-control mr-2">
+                    <button type="button" onclick="sendEmail()" class="btn btn-primary">Send</button>
+                </div>
             </div>
         </div>
 
-        <div class="row" style="align-items: center; ;margin-top:100px; color: grey;">
-            <div class="row">
-                <p>All rights reserverd <i class="fa fa-copyright" aria-hidden="true"></i> 2023</p>
+        <div class="row" style="align-items: center; margin-top:100px; color: grey;">
+            <div class="col-12">
+                <p>All rights reserved <i class="fa fa-copyright" aria-hidden="true"></i> 2023</p>
             </div>
         </div>
     </div>
