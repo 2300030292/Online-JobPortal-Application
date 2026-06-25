@@ -186,7 +186,6 @@
         <p>Get in touch with support teams or drop inquiries directly.</p>
     </div>
 
-
     <div style="background-color: black; width: 100%; height: 500px; padding-top: 80px; margin-top: 200px;">
         <div class="container">
             <div class="row">
@@ -228,18 +227,4 @@
             views.forEach(view => view.classList.remove('active-view'));
             
             // Show selected view
-            const target = document.getElementById(viewId);
-            if(target) {
-                target.classList.add('active-view');
-                window.scrollTo(0, 0);
-            }
-        }
-
-        document.getElementById('staticLoginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("Demo Mode: Login Successful!");
-        });
-    </script>
-
-</body>
-</html>
+            const target =
