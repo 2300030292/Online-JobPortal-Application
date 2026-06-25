@@ -1,39 +1,115 @@
-{% load static %}
+<!DOCTYPE html>
+<html>
 
-{% block body %}
+<head>
+    <title>User Login - Job Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/Online-JobPortal-Application/static/images/favicon1.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-{% include 'navigation.html' %}
+    <style>
+        .nav-link { color: white !important; margin-right: 4px; }
+        .nav-link:hover { color: yellow !important; font-weight: bold; background-color: red; border-radius: 10px; }
+        .navbar-brand:hover { color: yellow !important; }
+        .container { max-width: 90%; }
+    </style>
+</head>
 
-<marquee style="font-family: 'Monotype Corsiva'; font-size: 25px; color: darkcyan; background-color: black; font-weight: bold; margin-top: 1%">
-    User Login
-</marquee>
-<hr>
+<body>
 
-<form class="container mt-5" method="post">
-    {% csrf_token %}
-    <label><b>Email ID</b></label>
-    <input type="email" class="form-control" name="uname" placeholder="Enter Email ID">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="/Online-JobPortal-Application/static/images/job1.png" style="width: 180px; height: 150px" alt="Job Logo">
+            </div>
+            <div class="col-sm-6 mt-5 text-center">
+                <span style="font-weight : bold; font-size: 30px">
+                    <span style="color: red">Online Job</span>
+                    <span style="color: green">Portal System</span>
+                </span>
+            </div>
+            <div class="col-sm-3 mt-5" style="padding-left: 10%">
+                <span><i class="fa fa-twitter" style="padding-left: 4px;"></i></span>
+                <span><i class="fa fa-linkedin" style="padding-left: 4px;"></i></span>
+                <span><i class="fa fa-instagram" style="padding-left: 4px;"></i></span>
+                <span><i class="fa fa-telegram" style="padding-left: 4px;"></i></span>
+            </div>
+        </div>
+    </div>
 
-    <label><b>Password</b></label>
-    <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
+    <nav class="navbar navbar-expand-sm" style="background-color: maroon">
+        <a class="navbar-brand text-white pl-5 font-weight-bold" style="font-family: 'Monotype Corsiva'; font-size: 30px;">Job Portal</a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="../index.html" style="margin-left: 280px"><i class="fa fa-home mr-1"></i>Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="latest_jobs.html"><i class="fa fa-users mr-1"></i>Latest Jobs</a></li>
+            <li class="nav-item"><a class="nav-link" href="user_login.html"><i class="fa fa-user-plus mr-1"></i>User Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="recruiter_login.html"><i class="fa fa-sign-language mr-1"></i>Recruiter Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="admin_login.html"><i class="fa fa-sign-in mr-1"></i>Admin Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fa fa-address-book mr-1"></i>Contact</a></li>
+        </ul>
+    </nav>
 
-    <input type="submit" value="Login" class="btn btn-primary" style="margin-top: 2%; color: darkcyan; background-color: black; height: 40px;">
-    <a href="{% url 'user_signup' %}" class="btn btn-primary" style="margin-top: 2%; color: darkcyan; background-color: black; height: 40px;">Sign Up</a>
-</form>
+    <marquee style="font-family: 'Monotype Corsiva'; font-size: 25px; color: darkcyan; background-color: black; font-weight: bold; margin-top: 1%">
+        User Login
+    </marquee>
+    <hr>
 
-{% include 'footer.html' %}
+    <div class="container mt-5">
+        <form id="staticLoginForm">
+            <label><b>Email ID</b></label>
+            <input type="email" class="form-control" id="uname" placeholder="Enter Email ID" required>
 
-{% if error == "no" %}
-<script>
-    alert("Login Successful!");
-    window.location=('{% url 'user_home' %}')
-</script>
-{% endif %}
+            <label class="mt-2"><b>Password</b></label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter Password" required>
 
-{% if error == "yes" %}
-<script>
-    alert("Invalid Login Credentials, Try Again...");
-</script>
-{% endif %}
+            <button type="submit" class="btn btn-primary" style="margin-top: 2%; color: darkcyan; background-color: black; height: 40px; border: none;">Login</button>
+            <a href="user_signup.html" class="btn btn-primary" style="margin-top: 2%; color: darkcyan; background-color: black; height: 40px; border: none;">Sign Up</a>
+        </form>
+    </div>
 
-{% endblock %}
+    <script>
+        document.getElementById('staticLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Demo Mode: Login Successful!");
+            window.location.href = "user_home.html";
+        });
+    </script>
+
+    <div style="background-color: black; width: 100%; height: 500px; padding-top: 80px; margin-top: 200px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mt-3">
+                    <h3 class="text-white">Contact Us</h3>
+                    <p style="color: yellow; font-size: 18px"><i class="fa fa-map-marker text-danger"></i> Kankarbagh House Main Road Lohia Nagar Sampatchak, Patna Bihar 800020</p>
+                    <p style="color: yellow; font-size: 18px"><i class="fa fa-envelope text-danger"></i> vibhutitiwary748@gmail.com </p>
+                    <p style="color: yellow; font-size: 18px"><i class="fa fa-phone text-danger"></i> +91 911 330 1648 / +91 748 885 7897</p>
+                    <p style="color: yellow; font-size: 18px"><i class="fa fa-globe text-danger"></i> www.jobsjust4u.com</p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="text-white">About Us</h3>
+                    <p style="color: yellow; font-size: 18px">We at JobsJust4U aim to connect our users to the top recruiting industrial companies by providing the right information at the right time. All the information shared by us is done through verified and trusted resources.</p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h3 class="text-white">Newsletter</h3>
+                    <p style="color: yellow; font-size: 18px">If any additional information is required, send us your email ID.</p>
+                    <div class="form-inline">
+                        <input type="email" placeholder="Email ID" class="form-control mr-2">
+                        <button type="button" class="btn btn-primary" onclick="alert('Subscribed to newsletter!')">Send</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="align-items: center; margin-top:100px; color: grey;">
+                <div class="col-12">
+                    <p>All rights reserved <i class="fa fa-copyright" aria-hidden="true"></i> 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
