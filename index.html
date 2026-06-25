@@ -16,6 +16,7 @@
         .nav-link {
             color: white !important;
             margin-right: 4px;
+            cursor: pointer;
         }
 
         .nav-link:hover {
@@ -42,6 +43,14 @@
             height: 30px;
             width: 91%;
         }
+        
+        /* Helper styles to switch screens without 404s */
+        .page-view {
+            display: none;
+        }
+        .active-view {
+            display: block;
+        }
     </style>
 </head>
 
@@ -54,14 +63,13 @@
             </div>
 
             <div class="col-sm-6 mt-5 text-center">
-                <span style="font-weight : bold; font-size: 30px">
+                <span style="font-weight: bold; font-size: 30px">
                     <span style="color: red">Online Job</span>
                     <span style="color: green">Portal System</span>
                 </span>
             </div>
 
             <div class="col-sm-3 mt-5" style="padding-left: 10%">
-                <span style="font-weight: bold; font-size: 30px"></span>
                 <span><i class="fa fa-twitter" style="padding-left: 4px;"></i></span>
                 <span><i class="fa fa-linkedin" style="padding-left: 4px;"></i></span>
                 <span><i class="fa fa-instagram" style="padding-left: 4px;"></i></span>
@@ -71,99 +79,113 @@
     </div>
 
     <nav class="navbar navbar-expand-sm" style="background-color: maroon">
-        <a class="navbar-brand text-white pl-5 font-weight-bold"
-            style="font-family: 'Monotype Corsiva'; font-size: 30px;">Job Portal</a>
+        <a class="navbar-brand text-white pl-5 font-weight-bold" style="font-family: 'Monotype Corsiva'; font-size: 30px;">Job Portal</a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.html" style="margin-left: 280px"><i class="fa fa-home mr-1"></i>Home</a>
+                <a class="nav-link" onclick="switchView('home-page')" style="margin-left: 280px"><i class="fa fa-home mr-1"></i>Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="templates/latest_jobs.html"><i class="fa fa-users mr-1"></i>Latest Jobs</a>
+                <a class="nav-link" onclick="switchView('latest-jobs-page')"><i class="fa fa-users mr-1"></i>Latest Jobs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="templates/user_login.html"><i class="fa fa-user-plus mr-1"></i>User Login</a>
+                <a class="nav-link" onclick="switchView('user-login-page')"><i class="fa fa-user-plus mr-1"></i>User Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="templates/recruiter_login.html"><i class="fa fa-sign-language mr-1"></i>Recruiter Login</a>
+                <a class="nav-link" onclick="switchView('recruiter-login-page')"><i class="fa fa-sign-language mr-1"></i>Recruiter Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="templates/admin_login.html"><i class="fa fa-sign-in mr-1"></i>Admin Login</a>
+                <a class="nav-link" onclick="switchView('admin-login-page')"><i class="fa fa-sign-in mr-1"></i>Admin Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="templates/contact.html"><i class="fa fa-address-book mr-1"></i>Contact</a>
+                <a class="nav-link" onclick="switchView('contact-page')"><i class="fa fa-address-book mr-1"></i>Contact</a>
             </li>
         </ul>
     </nav>
 
-
-    <div class="container-fluid" style="margin-top:1%">
-        <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/homepage.jpg" style="height: 450px; width:100%" alt="Homepage Banner">
-    </div>
-
-    <div class="container" style="background-color: gray; height: 570px; margin-top: 2%">
-        <h1 class="text-center text-white">---------- | OUR PLACED STUDENTS | ----------</h1>
-        
-        <div class="row mt-3">
-            <div class="col-md-3">
-                <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Facebook">
-                <div class="content">
-                    <p>Facebook</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f1.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Microsoft">
-                <div class="content">
-                    <p>Microsoft</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f3.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Salesforce">
-                <div class="content">
-                    <p>Salesforce</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f4.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Google">
-                <div class="content">
-                    <p>Google</p>
-                </div>
-            </div>
+    <div id="home-page" class="page-view active-view">
+        <div class="container-fluid" style="margin-top:1%">
+            <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/homepage.jpg" style="height: 450px; width:100%" alt="Homepage Banner">
         </div>
-        
-        <div class="row mt-3">
-            <div class="col-md-3">
-                <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f5.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Infosys">
-                <div class="content">
-                    <p>Infosys</p>
+
+        <div class="container" style="background-color: gray; height: 570px; margin-top: 2%; padding-bottom: 20px;">
+            <h1 class="text-center text-white">---------- | OUR PLACED STUDENTS | ----------</h1>
+            
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Facebook">
+                    <div class="content"><p>Facebook</p></div>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f1.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Microsoft">
+                    <div class="content"><p>Microsoft</p></div>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f3.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Salesforce">
+                    <div class="content"><p>Salesforce</p></div>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f4.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Google">
+                    <div class="content"><p>Google</p></div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f6.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Facebook">
-                <div class="content">
-                    <p>Facebook</p>
+            
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f5.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Infosys">
+                    <div class="content"><p>Infosys</p></div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f7.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Amazon">
-                <div class="content">
-                    <p>Amazon</p>
+                <div class="col-md-3">
+                    <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f6.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Facebook">
+                    <div class="content"><p>Facebook</p></div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f8.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student HCL">
-                <div class="content">
-                    <p>HCL</p>
+                <div class="col-md-3">
+                    <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f7.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Amazon">
+                    <div class="content"><p>Amazon</p></div>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://raw.githubusercontent.com/2300030292/Online-JobPortal-Application/main/static/images/f8.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student HCL">
+                    <div class="content"><p>HCL</p></div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div id="user-login-page" class="page-view">
+        <marquee style="font-family: 'Monotype Corsiva'; font-size: 25px; color: darkcyan; background-color: black; font-weight: bold; margin-top: 1%">
+            User Login
+        </marquee>
+        <hr>
+        <div class="container mt-5" style="min-height: 400px;">
+            <form id="staticLoginForm">
+                <label><b>Email ID</b></label>
+                <input type="email" class="form-control" placeholder="Enter Email ID" required>
 
-    <script>
-        function sendEmail() {
-            window.location.href = "mailto:vibhutitiwary748@gmail.com";
-        }
-    </script>
+                <label class="mt-2"><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="Enter Password" required>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 2%; color: darkcyan; background-color: black; height: 40px; border: none;">Login</button>
+                <button type="button" class="btn btn-primary" onclick="alert('Demo Mode: Navigating to Sign Up')" style="margin-top: 2%; color: darkcyan; background-color: black; height: 40px; border: none;">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="latest-jobs-page" class="page-view container mt-5" style="min-height: 400px;">
+        <h2>Latest Jobs</h2>
+        <p>Explore recently posted software engineering positions and roles here.</p>
+    </div>
+    <div id="recruiter-login-page" class="page-view container mt-5" style="min-height: 400px;">
+        <h2>Recruiter Login</h2>
+        <p>Recruiter terminal access panel placeholder.</p>
+    </div>
+    <div id="admin-login-page" class="page-view container mt-5" style="min-height: 400px;">
+        <h2>Admin Login</h2>
+        <p>Administrative system infrastructure configuration panel placeholder.</p>
+    </div>
+    <div id="contact-page" class="page-view container mt-5" style="min-height: 400px;">
+        <h2>Contact Interface</h2>
+        <p>Get in touch with support teams or drop inquiries directly.</p>
+    </div>
+
 
     <div style="background-color: black; width: 100%; height: 500px; padding-top: 80px; margin-top: 200px;">
         <div class="container">
@@ -186,7 +208,7 @@
                     <p style="color: yellow; font-size: 18px">If any additional information is required, send us your email ID.</p>
                     <div class="form-inline">
                         <input type="email" id="newsletterEmail" placeholder="Email ID" required class="form-control mr-2">
-                        <button type="button" onclick="sendEmail()" class="btn btn-primary">Send</button>
+                        <button type="button" onclick="alert('Subscribed successfully!')" class="btn btn-primary">Send</button>
                     </div>
                 </div>
             </div>
@@ -198,6 +220,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function switchView(viewId) {
+            // Hide all views
+            const views = document.querySelectorAll('.page-view');
+            views.forEach(view => view.classList.remove('active-view'));
+            
+            // Show selected view
+            const target = document.getElementById(viewId);
+            if(target) {
+                target.classList.add('active-view');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        document.getElementById('staticLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Demo Mode: Login Successful!");
+        });
+    </script>
 
 </body>
 </html>
