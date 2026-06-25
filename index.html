@@ -1,12 +1,203 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <script>
-        // Points exactly to your root templates folder
-        window.location.href = "./templates/index.html";
-    </script>
+    <title>Job Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon1.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .nav-link {
+            color: white !important;
+            margin-right: 4px;
+        }
+
+        .nav-link:hover {
+            color: yellow !important;
+            font-weight: bold;
+            background-color: red;
+            border-radius: 10px;
+        }
+
+        .navbar-brand:hover {
+            color: yellow !important;
+        }
+
+        .container {
+            max-width: 90%;
+        }
+
+        .content {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            height: 30px;
+            width: 91%;
+        }
+    </style>
 </head>
+
 <body>
-    <p>Loading Job Portal... If it doesn't load automatically, <a href="./templates/index.html">click here</a>.</p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./static/images/job1.png" style="width: 180px; height: 150px" alt="Job Logo">
+            </div>
+
+            <div class="col-sm-6 mt-5 text-center">
+                <span style="font-weight : bold; font-size: 30px">
+                    <span style="color: red">Online Job</span>
+                    <span style="color: green">Portal System</span>
+                </span>
+            </div>
+
+            <div class="col-sm-3 mt-5" style="padding-left: 10%">
+                <span style="font-weight: bold; font-size: 30px"></span>
+                <span><i class="fa fa-twitter" style="padding-left: 4px;"></i></span>
+                <span><i class="fa fa-linkedin" style="padding-left: 4px;"></i></span>
+                <span><i class="fa fa-instagram" style="padding-left: 4px;"></i></span>
+                <span><i class="fa fa-telegram" style="padding-left: 4px;"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm" style="background-color: maroon">
+        <a class="navbar-brand text-white pl-5 font-weight-bold"
+            style="font-family: 'Monotype Corsiva'; font-size: 30px;">Job Portal</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./index.html" style="margin-left: 280px"><i class="fa fa-home mr-1"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./templates/latest_jobs.html"><i class="fa fa-users mr-1"></i>Latest Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./templates/user_login.html"><i class="fa fa-user-plus mr-1"></i>User Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./templates/recruiter_login.html"><i class="fa fa-sign-language mr-1"></i>Recruiter Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./templates/admin_login.html"><i class="fa fa-sign-in mr-1"></i>Admin Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./templates/contact.html"><i class="fa fa-address-book mr-1"></i>Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="container-fluid" style="margin-top:1%">
+        <img src="./static/images/homepage.jpg" style="height: 450px; width:100%" alt="Homepage Banner">
+    </div>
+
+    <div class="container" style="background-color: gray; height: 570px; margin-top: 2%">
+        <h1 class="text-center text-white">---------- | OUR PLACED STUDENTS | ----------</h1>
+        
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <img src="./static/images/f.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Facebook">
+                <div class="content">
+                    <p>Facebook</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="./static/images/f1.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Microsoft">
+                <div class="content">
+                    <p>Microsoft</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="./static/images/f3.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Salesforce">
+                <div class="content">
+                    <p>Salesforce</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="./static/images/f4.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Google">
+                <div class="content">
+                    <p>Google</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <img src="./static/images/f5.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Infosys">
+                <div class="content">
+                    <p>Infosys</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="./static/images/f6.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Facebook">
+                <div class="content">
+                    <p>Facebook</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="./static/images/f7.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student Amazon">
+                <div class="content">
+                    <p>Amazon</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="./static/images/f8.jpg" style="width: 100%; margin-top: 5%; height: 200px; border-radius: 50%;" alt="Student HCL">
+                <div class="content">
+                    <p>HCL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function sendEmail() {
+            window.location.href = "mailto:vibhutitiwary748@gmail.com";
+        }
+    </script>
+
+    <div style="background-color: black; width: 100%; height: 500px; padding-top: 80px; margin-top: 200px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mt-3">
+                    <h3 class="text-white">Contact Us</h3>
+                    <p style="color: yellow; font-size: 18px"><i class="fa fa-map-marker text-danger"></i> Kankarbagh House Main Road Lohia Nagar Sampatchak, Patna Bihar 800020</p>
+                    <p style="color: yellow; font-size: 18px"><i class="fa fa-envelope text-danger"></i> vibhutitiwary748@gmail.com </p>
+                    <p style="color: yellow; font-size: 18px"><i class="fa fa-phone text-danger"></i> +91 911 330 1648 / +91 748 885 7897</p>
+                    <p style="color: yellow; font-size: 18px"><i class="fa fa-globe text-danger"></i> www.jobsjust4u.com</p>
+                </div>
+
+                <div class="col-md-4 mt-3">
+                    <h3 class="text-white">About Us</h3>
+                    <p style="color: yellow; font-size: 18px">We at JobsJust4U aim to connect our users to the top recruiting industrial companies by providing the right information at the right time. All the information shared by us is done through verified and trusted resources.</p>
+                </div>
+
+                <div class="col-md-4 mt-3">
+                    <h3 class="text-white">Newsletter</h3>
+                    <p style="color: yellow; font-size: 18px">If any additional information is required, send us your email ID.</p>
+                    <div class="form-inline">
+                        <input type="email" id="newsletterEmail" placeholder="Email ID" required class="form-control mr-2">
+                        <button type="button" onclick="sendEmail()" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="align-items: center; margin-top:100px; color: grey;">
+                <div class="col-12">
+                    <p>All rights reserved <i class="fa fa-copyright" aria-hidden="true"></i> 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
